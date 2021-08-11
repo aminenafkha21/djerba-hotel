@@ -17,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8 */;
 
 --
--- Database: `unleashe_hotel`
+-- Database: `djerba_hotel`
 --
 
 -- --------------------------------------------------------
