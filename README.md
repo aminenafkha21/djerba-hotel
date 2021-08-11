@@ -1,4 +1,4 @@
-Web Based Online Hotel Booking System
+Web Djerba Online Hotel Booking System
 ==============================
 
 This online hotel booking system  written on PHP, html , css , bootsrap and javascript , MYSQL .
