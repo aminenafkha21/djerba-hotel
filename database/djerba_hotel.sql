@@ -1,33 +1,34 @@
 -- phpMyAdmin SQL Dump
--- version 4.2.11
--- http://www.phpmyadmin.net
+-- version 5.1.1
+-- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Nov 03, 2015 at 04:01 AM
--- Server version: 5.6.21
--- PHP Version: 5.6.3
+-- Hôte : 127.0.0.1
+-- Généré le : mer. 11 août 2021 à 20:55
+-- Version du serveur : 10.4.19-MariaDB
+-- Version de PHP : 8.0.7
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
+/*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `djerba_hotel`
+-- Base de données : 'djerba_hotel'
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `booking`
+-- Structure de la table `booking`
 --
 
-CREATE TABLE IF NOT EXISTS `booking` (
-`booking_id` int(200) NOT NULL,
+CREATE TABLE `booking` (
+  `booking_id` int(200) NOT NULL,
   `total_adult` int(50) NOT NULL,
   `total_children` int(50) NOT NULL,
   `checkin_date` date NOT NULL,
@@ -36,7 +37,7 @@ CREATE TABLE IF NOT EXISTS `booking` (
   `payment_status` varchar(50) NOT NULL,
   `total_amount` double DEFAULT NULL,
   `deposit` double NOT NULL,
-  `booking_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `booking_date` timestamp NOT NULL DEFAULT current_timestamp(),
   `first_name` varchar(30) NOT NULL,
   `last_name` varchar(30) NOT NULL,
   `email` varchar(50) NOT NULL,
@@ -47,145 +48,186 @@ CREATE TABLE IF NOT EXISTS `booking` (
   `state` varchar(30) NOT NULL,
   `postcode` varchar(30) NOT NULL,
   `country` varchar(30) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=133 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `booking`
+-- Déchargement des données de la table `booking`
 --
 
 INSERT INTO `booking` (`booking_id`, `total_adult`, `total_children`, `checkin_date`, `checkout_date`, `special_requirement`, `payment_status`, `total_amount`, `deposit`, `booking_date`, `first_name`, `last_name`, `email`, `telephone_no`, `add_line1`, `add_line2`, `city`, `state`, `postcode`, `country`) VALUES
-(127, 2, 0, '2014-12-05', '2014-12-07', '', 'pending', 440, 66, '2014-12-04 20:52:53', 'Mohd Zulkarnain', 'Jaranee', 'mrzulkarnine@gmail.com', '0128951744', '307 Kpg Kanchong Jaya Gedong', 'None', 'Serian', 'Sarawak', '50600', 'Malaysia'),
-(128, 1, 0, '2014-12-05', '2014-12-06', '', 'pending', 360, 54, '2014-12-05 03:49:58', 'Mohd Zulkarnain', 'Jaranee', 'mrzulkarnine@gmail.com', '0128951744', '307 Kpg Kanchong Jaya Gedong', 'None', 'Serian', 'Sarawak', '50600', 'Malaysia'),
-(129, 1, 0, '2014-12-05', '2014-12-07', '', 'pending', 240, 36, '2014-12-05 04:53:27', 'Mohd Zulkarnain', 'Jaranee', 'mrzulkarnine@gmail.com', '0128951744', '307 Kpg Kanchong Jaya Gedong', 'None', 'Serian', 'Sarawak', '50600', 'Malaysia'),
-(130, 1, 0, '2014-12-05', '2014-12-07', '', 'pending', 480, 72, '2014-12-05 04:58:13', 'Mohd Zulkarnain', 'Jaranee', 'mrzulkarnine@gmail.com', '0128951744', '307 Kpg Kanchong Jaya Gedong', 'None', 'Serian', 'Sarawak', '50600', 'Malaysia'),
-(131, 2, 0, '2015-05-21', '2015-05-23', '', 'pending', 240, 36, '2015-05-20 19:16:14', 'Mohd Zulkarnain', 'Jaranee', 'mrzulkarnine@gmail.com', '0128951744', '307 Kpg Kanchong Jaya Gedong', '', 'Serian', 'Sarawak', '50600', 'Malaysia'),
-(132, 2, 0, '2015-05-21', '2015-05-23', '', 'pending', 920, 138, '2015-05-20 19:18:52', 'Mohd Zulkarnain', 'Jaranee', 'mrzulkarnine@gmail.com', '0128951744', '307 Kpg Kanchong Jaya Gedong', '', 'Serian', 'Sarawak', '50600', 'Malaysia');
+(468, 0, 0, '2021-08-21', '2021-08-28', '', 'confirmed', 9261, 1389.15, '2021-08-08 09:37:12', 'amine', 'aa', 'aminenafkha21@gmail.com', '4444', 'zdzd', 'dzd', 'fgdf', 'ben', '4160', 'Tunisie'),
+(469, 0, 0, '2021-08-13', '2021-08-21', '', 'pending', 2352, 352.8, '2021-08-08 10:11:44', 'amine', 'aa', 'aminenafkha21@gmail.com', '+6057587', 'zdzd', 'dzd', 'fgdf', 'ben', '4160', 'Tunisia');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `room`
+-- Structure de la table `contact`
 --
 
-CREATE TABLE IF NOT EXISTS `room` (
-`room_id` int(255) NOT NULL,
+CREATE TABLE `contact` (
+  `id` int(11) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `subject` varchar(255) NOT NULL,
+  `message` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Déchargement des données de la table `contact`
+--
+
+INSERT INTO `contact` (`id`, `name`, `email`, `subject`, `message`) VALUES
+(1, 'amine aa', 'aminenafkha21@gmail.com', '', 'mo'),
+(2, 'amine aa', 'aminenafkha21@gmail.com', '', ''),
+(3, 'amine aa', 'aminenafkha21@gmail.com', '', ''),
+(4, 'amine aa', 'aminenafkha21@gmail.com', '', ''),
+(5, '', '', '', ''),
+(6, 'amine aa', 'aminenafkha21@gmail.com', '', ''),
+(7, 'amine aa', 'aminenafkha21@gmail.com', '', 'fsd'),
+(8, 'amine aa', 'aminenafkha21@gmail.com', '', ''),
+(9, 'amine aa', 'aminenafkha21@gmail.com', 'I buy bet365+ skrill or neteller accounts from EU or India or Bangladesh !', ''),
+(10, 'amine aa', 'aminenafkha21@gmail.com', '', ''),
+(11, 'amine aa', 'aminenafkha21@gmail.com', 'I buy bet365+ skrill or neteller accounts from EU or India or Bangladesh !', 'mo'),
+(12, 'mohamed amine Nafkha', 'aminenafkha21@gmail.com', 'I buy bet365+ skrill or neteller accounts from EU or India or Bangladesh !', '');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `room`
+--
+
+CREATE TABLE `room` (
+  `room_id` int(255) NOT NULL,
   `total_room` int(255) NOT NULL,
   `occupancy` int(255) DEFAULT NULL,
   `size` varchar(30) DEFAULT NULL,
   `view` varchar(30) DEFAULT NULL,
   `room_name` varchar(50) NOT NULL,
-  `descriptions` text,
+  `descriptions` text DEFAULT NULL,
   `rate` double NOT NULL,
   `imgpath` varchar(100) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `room`
+-- Déchargement des données de la table `room`
 --
 
 INSERT INTO `room` (`room_id`, `total_room`, `occupancy`, `size`, `view`, `room_name`, `descriptions`, `rate`, `imgpath`) VALUES
-(1, 5, 2, '10 sqft', 'city', 'Deluxe Room', 'Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit', 120, 'img/room2.png'),
-(2, 5, 2, '10 sqft', 'city', 'Single Room', 'Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit', 100, 'img/room3.png'),
-(3, 10, 10, '20 sqft', 'City', 'King Suite Room', 'Suitable for honeymoon', 120, 'img/room3.jpg');
+(20, 10, 10, '14', 'city', 'marwen', 'hhhh', 147, 'img/bga.jpg'),
+(24, 10, 5, '14', 'city', 'King Suite', 'fg', 147, 'img/bga.jpg'),
+(25, 10, 10, '14', '', 'g', '', 147, 'img/bgimg.PNG'),
+(26, 10, 10, '14', '', 'King Suite', '', 130, 'img/bga.jpg');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `roombook`
+-- Structure de la table `roombook`
 --
 
-CREATE TABLE IF NOT EXISTS `roombook` (
+CREATE TABLE `roombook` (
   `booking_id` int(11) NOT NULL,
   `room_id` int(11) NOT NULL,
   `totalroombook` int(11) NOT NULL,
-`id` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=75 DEFAULT CHARSET=latin1;
+  `id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `roombook`
+-- Déchargement des données de la table `roombook`
 --
 
 INSERT INTO `roombook` (`booking_id`, `room_id`, `totalroombook`, `id`) VALUES
-(127, 1, 1, 67),
-(127, 2, 1, 68),
-(128, 3, 3, 69),
-(129, 1, 1, 70),
-(130, 1, 1, 71),
-(131, 1, 1, 72),
-(132, 1, 2, 73),
-(132, 2, 1, 74);
+(468, 24, 5, 578),
+(468, 25, 4, 579),
+(469, 20, 2, 580);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `user`
+-- Structure de la table `user`
 --
 
-CREATE TABLE IF NOT EXISTS `user` (
-`id` int(11) NOT NULL,
+CREATE TABLE `user` (
+  `id` int(11) NOT NULL,
   `username` varchar(300) NOT NULL,
   `password` varchar(300) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `user`
+-- Déchargement des données de la table `user`
 --
 
 INSERT INTO `user` (`id`, `username`, `password`) VALUES
-(1, 'demo', 'demo');
+(1, 'demo', 'fe01ce2a7fbac8fafaed7c982a04e229');
 
 --
--- Indexes for dumped tables
+-- Index pour les tables déchargées
 --
 
 --
--- Indexes for table `booking`
+-- Index pour la table `booking`
 --
 ALTER TABLE `booking`
- ADD PRIMARY KEY (`booking_id`);
+  ADD PRIMARY KEY (`booking_id`);
 
 --
--- Indexes for table `room`
+-- Index pour la table `contact`
+--
+ALTER TABLE `contact`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Index pour la table `room`
 --
 ALTER TABLE `room`
- ADD PRIMARY KEY (`room_id`);
+  ADD PRIMARY KEY (`room_id`);
 
 --
--- Indexes for table `roombook`
+-- Index pour la table `roombook`
 --
 ALTER TABLE `roombook`
- ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `user`
+-- Index pour la table `user`
 --
 ALTER TABLE `user`
- ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT pour les tables déchargées
 --
 
 --
--- AUTO_INCREMENT for table `booking`
+-- AUTO_INCREMENT pour la table `booking`
 --
 ALTER TABLE `booking`
-MODIFY `booking_id` int(200) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=133;
+  MODIFY `booking_id` int(200) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=470;
+
 --
--- AUTO_INCREMENT for table `room`
+-- AUTO_INCREMENT pour la table `contact`
+--
+ALTER TABLE `contact`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+
+--
+-- AUTO_INCREMENT pour la table `room`
 --
 ALTER TABLE `room`
-MODIFY `room_id` int(255) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
+  MODIFY `room_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+
 --
--- AUTO_INCREMENT for table `roombook`
+-- AUTO_INCREMENT pour la table `roombook`
 --
 ALTER TABLE `roombook`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=75;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=581;
+
 --
--- AUTO_INCREMENT for table `user`
+-- AUTO_INCREMENT pour la table `user`
 --
 ALTER TABLE `user`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+COMMIT;
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
