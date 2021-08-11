@@ -1,0 +1,164 @@
+.fontbody{
+
+    background-image: url("../img/bgimg.PNG");
+
+
+  /* Full height */
+  height: 100%;
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-size: cover;
+}
+.circle{
+-webkit-border-radius: 90px;
+-moz-border-radius: 90px;
+border-radius: 90px;
+}
+
+.blackblur1{
+    background-color: #e59a09;
+   /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+   }
+
+   
+.blackblur{
+ background-color: #fff;
+/* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+}
+.fontslabo:hover,.fontslabo:focus{
+    background-color: #e59a09;
+}
+
+.centerdiv{
+text-align:center;
+}
+
+
+body, label, href, h4{
+font-family: 'Slabo 13px', serif !important;
+font-weight: 400;
+color : #e59a09;
+}
+
+.fontslabo{
+font-family: 'Slabo 13px', serif !important;
+font-weight: 400;
+color : #e59a09;
+font-size: 24px;
+font-weight: bold;
+}
+.fontslabo1{
+    font-family: 'Slabo 13px', serif !important;
+    font-weight: 400;
+    color : #e59a09;
+    font-size: 24px;
+    font-weight: bold;
+}
+.fontgrey1{
+    color : #e59a09;
+    }
+.fontgrey{
+color : black;
+}
+.fontgreysmall{
+color : black;
+font-size : 13px;
+}
+
+.borderstyle{
+border-radius: 0px 0px 0px 0px;
+-moz-border-radius: 0px 0px 0px 0px;
+-webkit-border-radius: 0px 0px 0px 0px;
+border: 1px dashed #95A5A6;
+}
+
+.line{ 
+height:5px;width:55px;background-color: #e59a09; border:1px solid #e59a09;
+}
+
+
+.btnrev {
+    background: #dca73a;
+    border: medium none;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    line-height: 0;
+    margin-bottom: 0;
+    padding: 25px 39px;
+    text-align: center;
+    text-transform: capitalize;
+    touch-action: manipulation;
+    transition: all 0.3s ease 0s;
+    vertical-align: middle;
+    white-space: nowrap; }
+  
+  .btnrev:hover {
+    background: #f1b233;
+    color: #fff; }
+
+
+    @media (min-width: 1200px) and (max-width: 1500px) {
+        .etapes1 {
+            width: 25%;
+        }
+    
+    }
+    
+    
+    /* Normal desktop :992px. */
+    @media (min-width: 992px) and (max-width: 1200px) {
+    .etapes1 {
+        width: 25%;
+    }
+    
+    }
+     
+/* Tablet desktop :768px. */
+@media (min-width: 768px) and (max-width: 991px) {
+    .etapes1 {
+        width: 25%;
+    }
+    .booking-area
+    {
+        width: 100%;
+        text-align: center;
+        
+    }
+    .large-4 img{
+        width: 450px;
+    }
+
+
+}
+
+ 
+/* small mobile :320px. */
+@media (max-width: 767px) {
+    .etapes1 {
+        width: 25%;
+    }
+ 
+    .large-4 img{
+        width: 250px;
+    }
+ 
+}
+ 
+/* Large Mobile :480px. */
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+.container {width:450px}
+.etapes1 {
+    width: 25%;
+}
+
+.large-4 img{
+    width: 250px;
+}
+
+ 
+}
